@@ -43,6 +43,11 @@ export class RecipeService {
     return this.recipes[index];
   }
 
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.notifyRecipesChange();
+  }
+
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
     this.slService.addIngredients(ingredients);
   }
@@ -61,4 +66,5 @@ export class RecipeService {
     this.recipes.splice(index, 1);
     this.notifyRecipesChange();
   }
+
 }
